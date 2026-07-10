@@ -646,7 +646,8 @@ const keys=['svc1_t','svc1_d','svc2_t','svc2_d','svc3_t','svc3_d','svc4_t','svc4
 for(let i=0;i<8;i++){
 const card=document.createElement('div');card.className='service-card reveal';
 card.innerHTML=`${svcIcons[i]}<h3>${d[keys[i*2]]}</h3><p>${d[keys[i*2+1]]}</p><a href="#contact" class="learn-more">${d.learn_more} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>`;
-grid.appendChild(card)}}
+grid.appendChild(card)}
+document.querySelectorAll('.service-card.reveal:not(.visible)').forEach(el=>revealObserver.observe(el))}
 
 // PROJECTS
 let currentFilter='all';
